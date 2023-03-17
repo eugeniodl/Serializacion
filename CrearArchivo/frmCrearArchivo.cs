@@ -32,7 +32,7 @@ namespace CrearArchivo
 
             selectorArchivo.CheckFileExists = false;
 
-            if (resultado == DialogResult.Cancel)
+            if(resultado == DialogResult.Cancel)
                 return;
 
             nombreArchivo = selectorArchivo.FileName;
@@ -50,7 +50,7 @@ namespace CrearArchivo
                     btnGuardar.Enabled = false;
                     btnIntroducir.Enabled = true;
                 }
-                catch (IOException)
+                catch(IOException)
                 {
                     MessageBox.Show("Error al abrir el archivo", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -62,8 +62,10 @@ namespace CrearArchivo
         {
             string[] valores = GetValoresTextBox();
 
+            // Registro que contiene los valores de los controles TextBox a serializar
             RegistroSerializable registro = new RegistroSerializable();
 
+            // determina si el campo del control TextBox de la cuenta está vacío
             if(valores[(int)IndicesTextBox.CUENTA] != "")
             {
                 try
@@ -73,8 +75,8 @@ namespace CrearArchivo
                     if(numeroCuenta > 0)
                     {
                         registro.Cuenta = numeroCuenta;
-                        registro.PrimerNombre = valores[(int)IndicesTextBox.NOMBRE];
-                        registro.ApellidoPaterno = valores[(int)IndicesTextBox.APELLIDO];
+                        registro.Nombre = valores[(int)IndicesTextBox.NOMBRE];
+                        registro.Apellido = valores[(int)IndicesTextBox.APELLIDO];
                         registro.Saldo = decimal.Parse(valores[(int)IndicesTextBox.SALDO]);
 
                         // escribe Registro al objeto FileStream (serializa el objeto)
@@ -86,7 +88,7 @@ namespace CrearArchivo
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                catch(SerializationException)
+                catch (SerializationException)
                 {
                     MessageBox.Show("Error al escribir en archivo", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -97,8 +99,7 @@ namespace CrearArchivo
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-
-            LimpiarTexBox();
+            LimpiarTextBox();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
