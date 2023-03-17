@@ -18,7 +18,6 @@ namespace CrearArchivo
         // objeto para serializar Registros en formato binario
         private BinaryFormatter aplicadorFormato = new BinaryFormatter();
         private FileStream salida; // mantiene la conexión con el archivo
-
         public frmCrearArchivo()
         {
             InitializeComponent();
@@ -50,7 +49,7 @@ namespace CrearArchivo
                     btnGuardar.Enabled = false;
                     btnIntroducir.Enabled = true;
                 }
-                catch (IOException)
+                catch(IOException)
                 {
                     MessageBox.Show("Error al abrir el archivo", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -62,20 +61,22 @@ namespace CrearArchivo
         {
             string[] valores = GetValoresTextBox();
 
+            // Registro que contiene los valores de los controles TextBox a serializa
             RegistroSerializable registro = new RegistroSerializable();
 
-            if(valores[(int)IndicesTextBox.CUENTA] != "")
+            if(valores[(int)IndicesTexBox.CUENTA] != "")
             {
                 try
                 {
-                    int numeroCuenta = int.Parse(valores[(int)IndicesTextBox.CUENTA]);
+                    int numeroCuenta = int.Parse(valores[(int)IndicesTexBox.CUENTA]);
 
                     if(numeroCuenta > 0)
                     {
+                        // almacena los campso de los controles TextBox en Registro
                         registro.Cuenta = numeroCuenta;
-                        registro.PrimerNombre = valores[(int)IndicesTextBox.NOMBRE];
-                        registro.ApellidoPaterno = valores[(int)IndicesTextBox.APELLIDO];
-                        registro.Saldo = decimal.Parse(valores[(int)IndicesTextBox.SALDO]);
+                        registro.Nombre = valores[(int)IndicesTexBox.NOMBRE];
+                        registro.Apellido = valores[(int)IndicesTexBox.APELLIDO];
+                        registro.Saldo = decimal.Parse(valores[(int)IndicesTexBox.SALDO]);
 
                         // escribe Registro al objeto FileStream (serializa el objeto)
                         aplicadorFormato.Serialize(salida, registro);
@@ -97,8 +98,7 @@ namespace CrearArchivo
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-
-            LimpiarTexBox();
+            LimpiarTextBox();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -115,7 +115,7 @@ namespace CrearArchivo
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            Application.Exit();
+            Application.Exit(); 
         }
     }
 }

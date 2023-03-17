@@ -14,7 +14,7 @@ namespace BibliotecaBanco
     {
         protected int CuentaTextBox = 4;
 
-        public enum IndicesTextBox
+        public enum IndicesTexBox
         {
             CUENTA,
             NOMBRE,
@@ -27,7 +27,7 @@ namespace BibliotecaBanco
             InitializeComponent();
         }
 
-        public void LimpiarTexBox()
+        public void LimpiarTextBox()
         {
             for (int i = 0; i < Controls.Count; i++)
             {
@@ -37,19 +37,19 @@ namespace BibliotecaBanco
             }
         }
 
-        public void SetValoresTexBox(string[] valores)
+        public void SetValoresTextBox(string[] valores)
         {
             if(valores.Length != CuentaTextBox)
             {
-                throw (new ArgumentException("Debe haber " +
-                    (CuentaTextBox + 1) + " objetos string en el arreglo"));
+                throw new ArgumentException("Debe haber " +
+                    (CuentaTextBox + 1) + " objetos string en el arreglo");
             }
             else
             {
-                txtCuenta.Text = valores[(int)IndicesTextBox.CUENTA];
-                txtPrimerNombre.Text = valores[(int)IndicesTextBox.NOMBRE];
-                txtApellidoPaterno.Text = valores[(int)IndicesTextBox.APELLIDO];
-                txtSaldo.Text = valores[(int)IndicesTextBox.SALDO];
+                txtCuenta.Text = valores[(int)IndicesTexBox.CUENTA];
+                txtNombre.Text = valores[(int)IndicesTexBox.NOMBRE];
+                txtApellido.Text = valores[(int)IndicesTexBox.APELLIDO];
+                txtSaldo.Text = valores[(int)IndicesTexBox.SALDO];
             }
         }
 
@@ -57,10 +57,10 @@ namespace BibliotecaBanco
         {
             string[] valores = new string[CuentaTextBox];
 
-            valores[(int)IndicesTextBox.CUENTA] = txtCuenta.Text;
-            valores[(int)IndicesTextBox.NOMBRE] = txtPrimerNombre.Text;
-            valores[(int)IndicesTextBox.APELLIDO] = txtApellidoPaterno.Text;
-            valores[(int)IndicesTextBox.SALDO] = txtSaldo.Text;
+            valores[(int)IndicesTexBox.CUENTA] = txtCuenta.Text;
+            valores[(int)IndicesTexBox.NOMBRE] = txtNombre.Text;
+            valores[(int)IndicesTexBox.APELLIDO] = txtApellido.Text;
+            valores[(int)IndicesTexBox.SALDO] = txtSaldo.Text;
 
             return valores;
         }

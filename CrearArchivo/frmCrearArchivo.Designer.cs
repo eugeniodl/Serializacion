@@ -35,9 +35,9 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(46, 250);
+            this.btnGuardar.Location = new System.Drawing.Point(33, 268);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(134, 23);
+            this.btnGuardar.Size = new System.Drawing.Size(148, 23);
             this.btnGuardar.TabIndex = 8;
             this.btnGuardar.Text = "Guardar como";
             this.btnGuardar.UseVisualStyleBackColor = true;
@@ -46,9 +46,9 @@
             // btnIntroducir
             // 
             this.btnIntroducir.Enabled = false;
-            this.btnIntroducir.Location = new System.Drawing.Point(208, 250);
+            this.btnIntroducir.Location = new System.Drawing.Point(214, 268);
             this.btnIntroducir.Name = "btnIntroducir";
-            this.btnIntroducir.Size = new System.Drawing.Size(134, 23);
+            this.btnIntroducir.Size = new System.Drawing.Size(148, 23);
             this.btnIntroducir.TabIndex = 9;
             this.btnIntroducir.Text = "Introducir";
             this.btnIntroducir.UseVisualStyleBackColor = true;
@@ -56,9 +56,9 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(368, 250);
+            this.btnSalir.Location = new System.Drawing.Point(394, 268);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(134, 23);
+            this.btnSalir.Size = new System.Drawing.Size(148, 23);
             this.btnSalir.TabIndex = 10;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
@@ -68,12 +68,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(560, 315);
+            this.ClientSize = new System.Drawing.Size(569, 317);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnIntroducir);
             this.Controls.Add(this.btnGuardar);
             this.Name = "frmCrearArchivo";
-            this.Text = "Creación de ";
+            this.Text = "Crear archivo";
             this.Controls.SetChildIndex(this.btnGuardar, 0);
             this.Controls.SetChildIndex(this.btnIntroducir, 0);
             this.Controls.SetChildIndex(this.btnSalir, 0);

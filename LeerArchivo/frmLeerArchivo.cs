@@ -19,6 +19,7 @@ namespace LeerArchivo
         private BinaryFormatter lector = new BinaryFormatter();
         private FileStream entrada; // flujo para leer de un archivo
 
+
         public frmLeerArchivo()
         {
             InitializeComponent();
@@ -30,11 +31,11 @@ namespace LeerArchivo
             DialogResult resultado = selectorArchivo.ShowDialog();
             string nombreArchivo;
 
-            if (resultado == DialogResult.Cancel)
+            if(resultado == DialogResult.Cancel)
                 return;
 
             nombreArchivo = selectorArchivo.FileName;
-            LimpiarTexBox();
+            LimpiarTextBox();
 
             if(nombreArchivo == "" || nombreArchivo == null)
                 MessageBox.Show("Nombre de archivo inválido", "Error",
@@ -62,25 +63,26 @@ namespace LeerArchivo
                 string[] valores = new string[]
                 {
                     registro.Cuenta.ToString(),
-                    registro.PrimerNombre.ToString(),
-                    registro.ApellidoPaterno.ToString(),
+                    registro.Nombre.ToString(),
+                    registro.Apellido.ToString(),
                     registro.Saldo.ToString()
                 };
 
                 // copia los valores del arreglo string a los controles TextBox
-                SetValoresTexBox(valores);
+                SetValoresTextBox(valores);
             }
-            catch (SerializationException)
+            // maneja la excepción cuando no hay registros en el archivo
+            catch(SerializationException)
             {
                 entrada.Close(); // cierra objeto FileStream si no hay registros en el archivo
-                btnAbrir.Enabled = true; // habilita el botón Abrir archivo
-                btnSiguiente.Enabled=false; // deshabilita el botón Siguiente registro
+                btnAbrir.Enabled = true;
+                btnSiguiente.Enabled=false;
 
-                LimpiarTexBox();
+                LimpiarTextBox();
 
                 // notifica al usuario si no hay registros en el archivo
-                MessageBox.Show("No hay más registros en el archivo", "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No hay más registros en el archivo", "",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }
