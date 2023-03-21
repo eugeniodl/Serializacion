@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrearArchivo", "CrearArchiv
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeerArchivo", "LeerArchivo\LeerArchivo.csproj", "{31C6F60F-E3DF-40F7-BEBB-B640449396EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerializacionBinaria", "SerializacionBinaria\SerializacionBinaria.csproj", "{AA6D9907-6C4F-44C3-9897-6C410394F4E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SerializacionBinaria", "SerializacionBinaria\SerializacionBinaria.csproj", "{AA6D9907-6C4F-44C3-9897-6C410394F4E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerializacionXML", "SerializacionXML\SerializacionXML.csproj", "{2B8A9CD7-7401-4F7E-8D40-58185B3590B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{AA6D9907-6C4F-44C3-9897-6C410394F4E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA6D9907-6C4F-44C3-9897-6C410394F4E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA6D9907-6C4F-44C3-9897-6C410394F4E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B8A9CD7-7401-4F7E-8D40-58185B3590B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B8A9CD7-7401-4F7E-8D40-58185B3590B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B8A9CD7-7401-4F7E-8D40-58185B3590B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B8A9CD7-7401-4F7E-8D40-58185B3590B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
