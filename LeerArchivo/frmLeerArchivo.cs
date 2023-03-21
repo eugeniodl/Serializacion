@@ -79,8 +79,8 @@ namespace LeerArchivo
                 LimpiarTexBox();
 
                 // notifica al usuario si no hay registros en el archivo
-                MessageBox.Show("No hay más registros en el archivo", "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No hay más registros en el archivo", "",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }
