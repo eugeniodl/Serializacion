@@ -32,5 +32,13 @@ namespace SerializacionBinaria
         public string Nombre { get => nombre; set => nombre = value; }
         public string Apellido { get => apellido; set => apellido = value; }
         public decimal Saldo { get => saldo; set => saldo = value; }
+
+        public override string ToString()
+        {
+            return "Cuenta: " + Cuenta + "\n" +
+                "Nombre: " + Nombre + "\n" +
+                "Apellido: " + Apellido + "\n" +
+                "Saldo: " + Saldo + "\n";
+        }
     }
 }
