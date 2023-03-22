@@ -1,10 +1,9 @@
-﻿using System.Xml.Serialization;
+﻿
+using System.Text.Json;
 
-Console.WriteLine("Serialización XML en C#\r");
-Console.WriteLine("-----------------------\n");
+Console.WriteLine("Serialización JSON en C#\r");
+Console.WriteLine("------------------------\n");
 
-XmlSerializer formateador = new XmlSerializer(typeof(RegistroSerializable));
-Stream miStream = null;
 RegistroSerializable registro = null;
 int cuenta = 0;
 string valorCuenta = "";
@@ -12,6 +11,8 @@ string nombre = "";
 string apellido = "";
 decimal saldo = 0.0M;
 string valorSaldo = "";
+string nombreArchivo = "clientes.json";
+string jsonString = "";
 
 // Solicite al usuario que elija una opción
 Console.WriteLine("Elija una opción de la siguiente lista:");
@@ -24,9 +25,6 @@ string op = Console.ReadLine()!;
 switch (op)
 {
     case "s":
-        // se crea el Stream
-        miStream = new FileStream("clientes.xml", FileMode.OpenOrCreate, FileAccess.Write, FileShare.None);
-
         // Creamos el objeto registro
 
         // Solicite al usuario que escriba el número de la cuenta.
@@ -64,24 +62,17 @@ switch (op)
 
         // Empezamos la serialización
         Console.WriteLine("------------- Serializamos -------------");
+        jsonString = JsonSerializer.Serialize(registro);
+        File.WriteAllText(nombreArchivo, jsonString);
 
-        // Serializamos
-        formateador.Serialize(miStream, registro);
-
-        // Cerramos el Stream
-        miStream.Close();
         break;
     case "d":
         // Deserializamos el objeto
         Console.WriteLine("------------- Deserializamos -------------");
 
-        miStream = new FileStream("clientes.xml", FileMode.Open, FileAccess.Read, FileShare.None);
-
         // Deserializamos
-        registro = (RegistroSerializable)formateador.Deserialize(miStream);
-
-        // Cerramos el Stream
-        miStream.Close();
+        jsonString = File.ReadAllText(nombreArchivo);
+        registro = JsonSerializer.Deserialize<RegistroSerializable>(jsonString)!;
 
         // Usamos el objeto
         Console.WriteLine("El registro deserializado es");
