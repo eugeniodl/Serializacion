@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeerArchivo", "LeerArchivo\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SerializacionBinaria", "SerializacionBinaria\SerializacionBinaria.csproj", "{A052CB70-D183-47F7-A768-363AB9235F56}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerializacionXML", "SerializacionXML\SerializacionXML.csproj", "{7DEB4FA1-F73F-4B5F-8094-2F45B254B676}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SerializacionXML", "SerializacionXML\SerializacionXML.csproj", "{7DEB4FA1-F73F-4B5F-8094-2F45B254B676}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerializacionJSON", "SerializacionJSON\SerializacionJSON.csproj", "{1BADDD76-9C35-4CAE-AF1E-78E2FAF2753C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{7DEB4FA1-F73F-4B5F-8094-2F45B254B676}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7DEB4FA1-F73F-4B5F-8094-2F45B254B676}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7DEB4FA1-F73F-4B5F-8094-2F45B254B676}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BADDD76-9C35-4CAE-AF1E-78E2FAF2753C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BADDD76-9C35-4CAE-AF1E-78E2FAF2753C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BADDD76-9C35-4CAE-AF1E-78E2FAF2753C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BADDD76-9C35-4CAE-AF1E-78E2FAF2753C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
