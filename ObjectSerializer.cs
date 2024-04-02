@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SerializacionXML
+namespace Serializacion
 {
+    // Clase para serialzar y deserializar objetos
     public class ObjectSerializer
     {
         private readonly ISerializerFactory _factory;
@@ -26,5 +27,6 @@ namespace SerializacionXML
             ISerializer serializer = _factory.CreateSerializer();
             return serializer.Deserialize<T>(fileName);
         }
+
     }
 }
