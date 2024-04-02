@@ -1,33 +1,33 @@
-﻿
-// Crear una persona para serializar
+﻿// Crear una persona para serializar
+
 using Serializacion;
 
-Persona persona = new Persona
+Persona persona = new Persona 
 {
-    PrimerNombre = "María",
-    SegundoNombre = "José",
-    PrimerApellido = "Guevara",
-    SegundoApellido = "Palacios",
-    Edad = 18,
-    Genero = "Femenino"
+    PrimerNombre = "José",
+    SegundoNombre = "María",
+    PrimerApellido = "Cruz",
+    SegundoApellido = "Poveda",
+    Edad = 19
 };
 
-// Serialización XML
+// Serializar persona en XML
 ISerializerFactory xmlSerializerFactory 
     = new XmlSerializerFactory();
-ObjectSerializer xmlObjectSerializer 
-    = new ObjectSerializer(xmlSerializerFactory);
+ObjectSerializer xmlObjectSerializer = 
+    new ObjectSerializer(xmlSerializerFactory);
 xmlObjectSerializer.Serialize(persona, "persona.xml");
 
+
 // Deserializar persona desde XML
-Persona personaFromXML
-    = xmlObjectSerializer.Deserialize<Persona>("persona.xml");
+Persona personaFromXML =
+    xmlObjectSerializer.Deserialize<Persona>("persona.xml");
+
 Console.WriteLine(
-    "Persona desde XML: " +
-    "Nombre = {0} {1}, " +
+    "Persona desde XML: Nombre = {0} {1}, " +
     "Apellido = {2} {3}, " +
-    "Edad = {4}, " +
-    "Género = {5}",
-    personaFromXML.PrimerNombre, personaFromXML.SegundoNombre,
-    personaFromXML.PrimerApellido, personaFromXML.SegundoApellido,
-    personaFromXML.Edad, personaFromXML.Genero);
+    "Edad = {4}", personaFromXML.PrimerNombre,
+    personaFromXML.SegundoNombre,
+    personaFromXML.PrimerApellido,
+    personaFromXML.SegundoApellido,
+    personaFromXML.Edad);

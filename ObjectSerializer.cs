@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Serializacion
 {
-    // Clase para serialzar y deserializar objetos
     public class ObjectSerializer
     {
         private readonly ISerializerFactory _factory;
+
 
         public ObjectSerializer(ISerializerFactory factory)
         {
@@ -27,6 +27,5 @@ namespace Serializacion
             ISerializer serializer = _factory.CreateSerializer();
             return serializer.Deserialize<T>(fileName);
         }
-
     }
 }

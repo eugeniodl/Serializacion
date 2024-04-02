@@ -11,7 +11,7 @@ namespace Serializacion
     {
         public T Deserialize<T>(string fileName)
         {
-            using(var reader  = new StreamReader(fileName)) 
+            using(var reader  = new StreamReader(fileName))
             {
                 var serializer = new XmlSerializer(typeof(T));
                 return (T)serializer.Deserialize(reader);
@@ -20,7 +20,7 @@ namespace Serializacion
 
         public void Serialize<T>(T obj, string fileName)
         {
-            using(var writer = new StreamWriter(fileName)) 
+            using(var writer  = new StreamWriter(fileName))
             {
                 var serializer = new XmlSerializer(typeof(T));
                 serializer.Serialize(writer, obj);

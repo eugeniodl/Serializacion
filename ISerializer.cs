@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Serializacion
 {
+    // Interfaz para la serialización
     public interface ISerializer
     {
         void Serialize<T>(T obj, string fileName);
