@@ -31,3 +31,23 @@ Console.WriteLine(
     personaFromXML.PrimerApellido,
     personaFromXML.SegundoApellido,
     personaFromXML.Edad);
+
+// Serializar persona en JSON
+ISerializerFactory jsonSerializerFactory
+    = new JsonSerializerFactory();
+ObjectSerializer jsonObjectSerializer =
+    new ObjectSerializer(jsonSerializerFactory);
+jsonObjectSerializer.Serialize(persona, "persona.json");
+
+// Deserializar persona desde JSON
+Persona personaFromJSON =
+    jsonObjectSerializer.Deserialize<Persona>("persona.json");
+
+Console.WriteLine(
+    "Persona desde JSON: Nombre = {0} {1}, " +
+    "Apellido = {2} {3}, " +
+    "Edad = {4}", personaFromJSON.PrimerNombre,
+    personaFromJSON.SegundoNombre,
+    personaFromJSON.PrimerApellido,
+    personaFromJSON.SegundoApellido,
+    personaFromJSON.Edad);
