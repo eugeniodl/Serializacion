@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Serializacion
 {
-    public class XmlSerializerFactory : ISerializerFactory
+    public class JsonSerializerFactory : ISerializerFactory
     {
         public ISerializer CreateSerializer()
         {
-            return new XmlObjectSerializer();
+            return new JsonSerializer();
         }
     }
 }

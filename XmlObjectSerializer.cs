@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace SerializacionXML
+namespace Serializacion
 {
     // Implementa la serialización XML
     public class XmlObjectSerializer : ISerializer

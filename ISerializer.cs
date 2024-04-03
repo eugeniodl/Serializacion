@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SerializacionXML
+namespace Serializacion
 {
     // Interfaz para la serialización
     public interface ISerializer

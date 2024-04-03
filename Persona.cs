@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SerializacionXML
+namespace Serializacion
 {
     // Clase para serializar/deserializar
     [Serializable]
