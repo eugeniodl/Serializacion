@@ -29,9 +29,12 @@ namespace JsonSerializacion
             try
             {
                 string json = "";
-                using (StreamReader sr = new StreamReader(rutaArchivo))
+                using (var fs = new FileStream(rutaArchivo, FileMode.Open, FileAccess.Read))
                 {
-                    json = sr.ReadToEnd();
+                    using (var sr = new StreamReader(fs))
+                    {
+                        json = sr.ReadToEnd();
+                    }
                 }
                 return json;
             }
@@ -52,9 +55,12 @@ namespace JsonSerializacion
         {
             try
             {
-                using (var sw = new StreamWriter(rutaArchivo))
+                using (var fs = new FileStream(rutaArchivo, FileMode.OpenOrCreate, FileAccess.Write))
                 {
-                    sw.WriteLine(json);
+                    using (var sw = new StreamWriter(fs))
+                    {
+                        sw.WriteLine(json);
+                    }
                 }
             }
             catch (Exception ex)
