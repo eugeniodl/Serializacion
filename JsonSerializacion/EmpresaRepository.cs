@@ -12,7 +12,7 @@ namespace JsonSerializacion
         public List<Empresa> DeserializarLista(string rutaArchivo)
         {
             var strJSON = OpenFileEmpresa(rutaArchivo);
-            if (strJSON.Substring(0, 5) != "Falla")
+            if (strJSON.Substring(0, 5) != "Falla ")
             {
                 return JsonConvert.DeserializeObject<List<Empresa>>(strJSON);
             }
@@ -22,7 +22,6 @@ namespace JsonSerializacion
                 var empresa = new Empresa();
                 empresa.Nombre = strJSON;
                 lista.Add(empresa);
-                empresa.Nombre = strJSON;
                 return lista;
             }
         }
@@ -37,9 +36,12 @@ namespace JsonSerializacion
         {
             try
             {
-                using (var sw = new StreamWriter(rutaArchivo))
+                using (var fs = new FileStream(rutaArchivo, FileMode.OpenOrCreate, FileAccess.Write))
                 {
-                    sw.WriteLine(strJson);
+                    using (var sw = new StreamWriter(fs))
+                    {
+                        sw.WriteLine(strJson);
+                    }
                 }
             }
             catch (Exception ex)
@@ -54,9 +56,12 @@ namespace JsonSerializacion
             try
             {
                 var strJSON = "";
-                using (StreamReader sr = new StreamReader(rutaArchivo))
+                using (var fs = new FileStream(rutaArchivo, FileMode.Open, FileAccess.Read))
                 {
-                    strJSON = sr.ReadToEnd();
+                    using (var sr = new StreamReader(fs))
+                    {
+                        strJSON = sr.ReadToEnd();
+                    }
                 }
                 return strJSON;
             }
